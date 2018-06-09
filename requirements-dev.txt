@@ -1,0 +1,10 @@
+flake8
+pip-conflict-checker
+pip-tools
+pytest
+pytest-cov
+pytest-runner
+
+# This will use the current directory's dependencies i.e. the package dependencies from setup.py
+-e .
+
