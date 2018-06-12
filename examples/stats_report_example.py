@@ -119,8 +119,8 @@ else:
                 ('Minutes Delivered', 'most-viewed presenter by minutes viewed', lambda s: s),
                 ('Unique Viewers', 'most-viewed presenter by unique viewers', lambda s: int(s)),
                 ('Session Length', 'most prolific presenter by minutes presented', lambda s: s)]:
-            winner = max(presenter_stats.items(), key=lambda t:t[1][stat_name])
-            print '{}: {} ({})'.format(stat_description, winner[0], stat_formatter(winner[1][stat_name]))
+            winner, details = max(presenter_stats.items(), key=lambda t:t[1][stat_name])
+            print '{}: {} ({})'.format(stat_description, winner, stat_formatter(details[stat_name]))
 
         print
         print 'are you not entertained?!'
