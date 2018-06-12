@@ -44,8 +44,8 @@ report_id = usage.call_service(
     startTime=last_month,
     endTime=now)
 
-isAvailable = True
 # let's assume the report generator is running. we can wait a bit for the report to be generated.
+isAvailable = False
 for attempt in range(3):
     seconds = (attempt+1)*10
     print 'sleeping {} time{} for {} seconds...'.format(
@@ -85,9 +85,10 @@ else:
                 rows.append([splitz[1]] + splitz[2].split(',')[1:])
             else:
                 rows.append(line.split(','))
-        
+
         print "{} rows in the report... let's peel out some stats!".format(len(rows))
         print
+
         session_name_index = headers.index('Session Name')
         average_rating_index = headers.index('Average Rating')
         views_index = headers.index('Views')
@@ -99,6 +100,7 @@ else:
         print 'highest-rated session: {} (rated {} out of 5)'.format(
             hrs[session_name_index],
             hrs[average_rating_index])
+
         # tabulate presenter stats
         presenter_index = headers.index('Presenter')
         presenter_column_indices = { c: headers.index(c) for c in \
