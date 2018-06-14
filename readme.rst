@@ -1,7 +1,8 @@
 # python-soap
 a python soap Panopto API client that wraps the zeep library for the heavy lifting
 
-## License
+License
+-------
 
 Copyright 2018 Panopto, Inc.
 
