@@ -6,7 +6,7 @@ THIS REPOSITORY IS UNSUPPORTED
 -----------------------------
 This repository is provided as-is for general developer guidance.
 
-The Panopto development team does not support this repository.
+The Panopto team does not support this repository.
 
 License
 -------
