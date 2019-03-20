@@ -82,7 +82,7 @@ class AuthenticatedClientFactory(object):
             address=self._decorate_endpoint(auth_endpoint, over_ssl=True))
 
         # need to pick apart raw response to get the cookie
-        with auth_client.options(raw_response=True):
+        with auth_client.settings(raw_response=True):
             response = auth_service.LogOnWithPassword(
                 userKey=self.username,
                 password=self.password)

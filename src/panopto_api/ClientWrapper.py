@@ -152,5 +152,5 @@ class ClientWrapper(object):
         Invoke an operation against the currently bound service and port.
         Return the response without any unpacking. Good for reading the raw response.
         '''
-        with self.client.options(raw_response=True):
+        with self.client.settings(raw_response=True):
             return self._service[operation_name](**kwargs)
