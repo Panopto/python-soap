@@ -123,8 +123,8 @@ class ClientWrapper(object):
         Set the active service of this ClientWrapper to the specified service and port names.
         If either is unspecified, the default is used. In most cases, that's desired.
         '''
-        service_name = service_name or self.services.keys()[0]
-        port_name = port_name or self.services[service_name].keys()[0]
+        service_name = service_name or list(self.services.keys())[0]
+        port_name = port_name or list(self.services[service_name].keys())[0]
         self._service = self.client.bind(service_name, port_name)
         self.bound_service_name = service_name
         self.bound_port_name = port_name
