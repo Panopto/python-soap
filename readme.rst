@@ -1,12 +1,14 @@
 # python-soap
 
-a python 2 soap Panopto API client that wraps the zeep library for the heavy lifting
+a python 3 soap Panopto API client that wraps the zeep library for the heavy lifting
 
 THIS REPOSITORY IS UNSUPPORTED
 -----------------------------
 This repository is provided as-is for general developer guidance.
 
 The Panopto team does not support this repository.
+
+To use the examples, move them and the contents of src to the same directory.
 
 License
 -------

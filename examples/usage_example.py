@@ -1,6 +1,7 @@
 # flake8: noqa
-from panopto_api.AuthenticatedClientFactory import AuthenticatedClientFactory
-from panopto_api.ClientWrapper import ClientWrapper
+# note: move this exmaple into the directory with the src files
+from AuthenticatedClientFactory import AuthenticatedClientFactory
+from ClientWrapper import ClientWrapper
 from datetime import datetime, timedelta
 from math import ceil
 
