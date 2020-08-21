@@ -10,6 +10,15 @@ The Panopto team does not support this repository.
 
 To use the examples, move them and the contents of src to the same directory.
 
+Basic operations:
+ - create an AuthenticatedClientFactory to use for creating endpoints to SOAP services.
+   - see a list of services with `get_endpoint()`
+   - get a client with `get_client(service_name)`
+ - use a ClientWrapper (authenticated from the above factory) to make service calls.
+   - see a list of available calls with `bound_operation()`
+   - see the form of a service call with `bound_operation(operation_name)`
+   - call the service with `call_service(operation_name, arguments...)`
+
 License
 -------
 
