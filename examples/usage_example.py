@@ -1,17 +1,33 @@
 # flake8: noqa
-# note: move this exmaple into the directory with the src files
+
+import sys
+from os.path import dirname, join, abspath
+sys.path.insert(0, abspath(join(dirname(__file__), '..', 'src', 'panopto_api')))
+
 from AuthenticatedClientFactory import AuthenticatedClientFactory
 from ClientWrapper import ClientWrapper
 from datetime import datetime, timedelta
 from math import ceil
 
 host = 'localhost'
+# method 1: you already have a cookie; just specify it
+cookie = None
+# method 2: use an oauth token to get a cookie
+# see here for instructions: https://support.panopto.com/s/article/oauth2-for-services
+# see here for code examples: https://github.com/Panopto/panopto-api-python-examples
+oauth_token = 'valid_oauth_token'
+# method 2: use username/password to log in and save a cookie
+# note: these are ignored if the oauth_token is supplied
 username = 'admin'
-password = '<insert local password>'
+password = '<password>'
 
 # create a client factory for making authenticated API requests
 auth = AuthenticatedClientFactory(
-    host, username, password, verify_ssl=host != 'localhost')
+    host,
+    cookie,
+    oauth_token,
+    username, password,
+    verify_ssl=host != 'localhost')
 
 # let's get some admin user
 user = auth.get_client('UserManagement')
