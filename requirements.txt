@@ -38,7 +38,7 @@ pytest-runner==3.0
 pytest==3.3.0
 pytz==2017.3              # via zeep
 requests-toolbelt==0.8.0  # via zeep
-requests==2.18.4          # via requests-toolbelt, zeep
+requests==2.31.0          # via requests-toolbelt, zeep
 six==1.11.0               # via isodate, mock, pip-tools, pytest, zeep
 urllib3==1.24.2           # via requests
 zeep==3.1.0
