@@ -1,6 +1,6 @@
 # python-soap
 
-a python 2 soap Panopto API client that wraps the zeep library for the heavy lifting
+A python SOAP Panopto API client that wraps the zeep library for the heavy lifting
 
 THIS REPOSITORY IS UNSUPPORTED
 -----------------------------
@@ -11,7 +11,7 @@ The Panopto team does not support this repository.
 License
 -------
 
-Copyright 2018 Panopto, Inc.
+Copyright 2024 Panopto, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -61,4 +61,7 @@ If that succeeds, then you can push a source package to artifactory
 ~/.pypirc).
 
 .. code:: console
+
     python setup.py bdist_wheel --universal upload -r local
+
+

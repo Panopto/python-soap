@@ -7,7 +7,7 @@ class TestSoapApi(unittest.TestCase):
     Tests the SoapApi
     """
     @classmethod
-    def setup_class(self):
+    def setup_class(cls):
         """
         Initialize the test via pytest
         """
@@ -16,9 +16,31 @@ class TestSoapApi(unittest.TestCase):
         """
         Tests creating an auth client
         """
+        # Arrange
         host = 'localhost'
         username = 'admin'
         password = 'password'
-        auth = AuthenticatedClientFactory(
-                host, username, password, verify_ssl=host != 'localhost')
+
+        # Act
+        auth = AuthenticatedClientFactory(host, username, password)
+
+        # Assert
         self.assertIsNotNone(auth)
+
+    def test_endpoint_iteration(self):
+        """
+        Tests creating an auth client
+        """
+        # Arrange
+        host = 'localhost'
+        username = 'admin'
+        password = 'password'
+        auth = AuthenticatedClientFactory(host, username, password)
+        responses = []
+
+        # Act
+        for endpoint in AuthenticatedClientFactory.ENDPOINTS:
+            responses.append(auth.get_endpoint(endpoint))
+
+        # Assert
+        self.assertEqual(len(responses), len(AuthenticatedClientFactory.ENDPOINTS))
