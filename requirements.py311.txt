@@ -4,8 +4,6 @@
 #
 #    pip-compile --no-emit-index-url --no-emit-trusted-host --output-file=requirements.py311.txt requirements-dev.txt
 #
--e file:///C:/GitHub/python-soap
-    # via -r requirements-dev.txt
 attrs==23.1.0
     # via zeep
 cachetools==5.3.2
